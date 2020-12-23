@@ -4,6 +4,7 @@ from kivy.uix.button import Button
 from kivy.uix.floatlayout import FloatLayout
 from kivy.uix.gridlayout import GridLayout
 import subprocess
+from kivy.uix.popup import Popup
 
 
 ##############example of a console command run via python. this reads out the model of a USB stick.
@@ -23,7 +24,12 @@ class FirstKivy(App):
         quit()
 
     def report(self, instance):
-        print("hi")
+        #print("hi")
+        popup = Popup(title='Test popup',
+            content = Label(text='Hello world'),
+            size_hint=(None, None), size=(400, 400),
+            auto_dissmis = False)
+        popup.open()
         subprocess.call(["dir"])
     def build(self):
         layout = GridLayout(cols=2, row_force_default=True, row_default_height=100)
