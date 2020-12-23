@@ -27,21 +27,22 @@ class FirstKivy(App):
         #print("hi")
         popup = Popup(title='Test popup',
             content = Label(text='Hello world'),
-            size_hint=(None, None), size=(400, 400),
-            auto_dissmis = False)
+            size_hint = (None, None), size = (400, 400),
+            auto_dismiss = False)
         popup.open()
-        subprocess.call(["dir"])
+        #subprocess.call(["dir"])
+
     def build(self):
         layout = GridLayout(cols=2, row_force_default=True, row_default_height=100)
 
         report_button = Button(text="Show report", pos=(300, 350), size_hint=(.10, .10))
+        report_button.bind(on_press=self.report)
         email_button = Button(text="Check email", pos=(100, 350), size_hint=(.10, .10))
         kismet_button = Button(text="Start Kismet", pos=(100, 350), size_hint=(.10, .10))
         nessus_button = Button(text="Start Nessus", pos=(100, 350), size_hint=(.10, .10))
         av_button = Button(text="Start Antivirus", pos=(100, 350), size_hint=(.10, .10))
         quit_button = Button(text="Quit", pos=(100, 350), size_hint=(.10, .10))
         quit_button.bind(on_press=self.do_quit_button)
-        report_button.bind(on_click=self.report)
 
         for but in [report_button, email_button, kismet_button, nessus_button, av_button, quit_button]:
             layout.add_widget(but)
