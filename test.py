@@ -28,7 +28,7 @@ class FirstKivy(App):
         popup = Popup(title='Test popup',
             content = Label(text='Hello world'),
             size_hint = (None, None), size = (400, 400),
-            auto_dismiss = False)
+            auto_dismiss = True)
         popup.open()
         #subprocess.call(["dir"])
 
