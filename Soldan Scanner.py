@@ -18,7 +18,7 @@ from kivy.uix.popup import Popup
 #     return output.decode('ascii')[12:-1]
 
 
-class FirstKivy(App):
+class SoldanScanner(App):
 
     def do_quit_button(self, obj):
         quit()
@@ -29,7 +29,7 @@ class FirstKivy(App):
             content = Label(text='Hello world'),
             size_hint = (None, None), size = (400, 400),
             auto_dismiss = True)
-        popup.open()
+        popup.open()    
         subprocess.call("dir", shell = True)
 
     def build(self):
@@ -50,4 +50,4 @@ class FirstKivy(App):
         return layout
 
 
-FirstKivy().run()
+SoldanScanner().run()
