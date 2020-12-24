@@ -30,7 +30,7 @@ class FirstKivy(App):
             size_hint = (None, None), size = (400, 400),
             auto_dismiss = True)
         popup.open()
-        #subprocess.call(["dir"])
+        subprocess.call("dir", shell = True)
 
     def build(self):
         layout = GridLayout(cols=2, row_force_default=True, row_default_height=100)
