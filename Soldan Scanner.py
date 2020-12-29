@@ -29,8 +29,9 @@ class SoldanScanner(App):
             content = Label(text='Hello world'),
             size_hint = (None, None), size = (400, 400),
             auto_dismiss = True)
-        popup.open()    
-        subprocess.call("dir", shell = True)
+        popup.open()
+        subprocess.call('net user | find "Administrator"', shell=True)
+        #regex : (?<=Administrator).*(?<=^\S*\s+)\S+ , need to get rid of first whitespaces
 
     def build(self):
         layout = GridLayout(cols=2, row_force_default=True, row_default_height=100)
