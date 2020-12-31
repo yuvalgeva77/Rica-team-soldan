@@ -35,6 +35,7 @@ class SoldanScanner(App):
 
     def do_nessus_install_button(self, instance):
         wb.open("https://de.tenable.com/products/nessus")
+        ## TODO: Open the description file
 
     def do_nessus_button(self, instance):
         wb.open("https://localhost:8834/")
