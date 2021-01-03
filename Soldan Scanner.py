@@ -1,4 +1,5 @@
 import subprocess
+from app import SoldanIT
 import webbrowser as wb
 from kivy.app import App
 from kivy.uix.label import Label
@@ -39,6 +40,9 @@ class SoldanScanner(App):
 
     def do_nessus_button(self, instance):
         wb.open("https://localhost:8834/")
+    
+    def do_av_button(self, instance):
+        SoldanIT.run_scan(self, instance)
 
     def build(self):
         layout = GridLayout(cols=2, row_force_default=True, row_default_height=100)
@@ -52,6 +56,7 @@ class SoldanScanner(App):
         nessus_button = Button(text="Start Nessus", pos=(100, 350), size_hint=(.10, .10))
         nessus_button.bind(on_press = self.do_nessus_button)
         av_button = Button(text="Start Antivirus", pos=(100, 350), size_hint=(.10, .10))
+        av_button.bind(on_press = self.do_av_button)
         quit_button = Button(text="Quit", pos=(100, 350), size_hint=(.10, .10))
         quit_button.bind(on_press=self.do_quit_button)
 
