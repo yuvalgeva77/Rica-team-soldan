@@ -55,6 +55,6 @@ def create_report():
 def run_scan():
     # report_name = "report_" + ts_string + ".txt"
     # run_command = "clamscan.exe . --log=report.txt"
-    chdir("clamav")
-    run_process = subprocess.Popen(["clamav/clamscan.exe", "--log=report.txt"], cwd=CWD, shell=True)
+    # chdir("clamav")
+    run_process = subprocess.Popen(["clamav\\clamscan.exe", "--log=report.txt"], cwd=CWD, shell=True)
     run_process.wait()
